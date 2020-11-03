@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
       ),
       body: ListView.builder(
         itemCount: 100,
-        padding: EdgeInsets.symmetric(vertical: 15),
+        padding: const EdgeInsets.symmetric(vertical: 15),
         itemBuilder: (context, index) => ItemTitle(index),
       ),
     );
