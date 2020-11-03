@@ -1,3 +1,5 @@
+import 'package:favtest/core/models/favorites.dart';
+import 'package:favtest/ui/screens/favorites/favorites_screen.dart';
 import 'package:favtest/ui/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -11,12 +13,17 @@ class TestApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Test',
-      routes: {
-        HomePage.routName: (context) => HomePage(),
-      },
-      initialRoute: HomePage.routName,
+    return ChangeNotifierProvider<Favorites>(
+      create: (context) => Favorites(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Test',
+        routes: {
+          HomePage.routeName: (context) => HomePage(),
+          FavoritesPage.routeName: (context) => FavoritesPage(),
+        },
+        initialRoute: HomePage.routeName,
+      ),
     );
   }
 }
