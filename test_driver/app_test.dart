@@ -72,6 +72,7 @@ void main() {
           'icon_32',
           'icon_50',
           'icon_71',
+          'icon_95',
         ];
 
         for (var icon in iconKeys) {
